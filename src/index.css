@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-neutral-950 text-neutral-200 antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-mono-plex {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: var(--dash, 4000);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-draw-line {
+  animation: draw-line 1.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::selection {
+  background: rgb(34 211 238 / 0.3);
+}
